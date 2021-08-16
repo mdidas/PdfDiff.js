@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>pdfDiff.js - A simple Javascript-based pdf-diff tool.</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="UTF-8" />
+    <meta description="pdfDiff.js - A simple Javascript-based pdf-diff tool." />
+    <meta name=”robots” content="index, follow" />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <div id="loader" class="-hidden"></div>
+
+    <header>
+      <h1>PdfDiff.js</h1>
+      <h4>Compare your pdf files locally. / No upload. / No cookies.</h4>
+    </header>
+
+    <div id="diff-info">
+      <div class="intro-text">
+        Based on Mozilla's <a href="https://mozilla.github.io/pdf.js/">PDF.js</a>.
+        <br /><br />
+        Drag and drop your PDF files to the buttons below:
+      </div>
+    </div>
+
+    <div class="upload-area">
+      <input id="file-input-0" type="file"/>
+      <input id="file-input-1" type="file"/>  
+    </div>
+    
+    <section id="pdf-0"></section><!--
+ --><section id="diff"></section><!--
+ --><section id="pdf-1"></section>
+    
+    <!-- Use latest PDF.js build from Github -->
+    <script type="text/javascript" src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    
+    <script type="text/javascript">
+      const pdfjsLib = window['pdfjs-dist/build/pdf'];
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
+    </script>
+
+    <script type="text/javascript" src="PdfRenderer.js"></script>
+    <script type="text/javascript" src="Pixel.js"></script>
+    <script type="text/javascript" src="CanvasDiff.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+  </body>
+</html>

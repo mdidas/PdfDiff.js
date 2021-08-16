@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>pdfDiff.js - A simple Javascript-based pdf-diff tool.</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="UTF-8" />
+    <meta description="pdfDiff.js - A simple Javascript-based pdf-diff tool." />
+    <meta name=”robots” content="index, follow" />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <header>
+      <h1>pdfDiff.js</h1>
+    </header>
+
+    <section id="pdf-0">
+      
+    </section>
+    
+    <!-- Use latest PDF.js build from Github -->
+    <script type="text/javascript" src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    
+    <script type="text/javascript">
+      const pdfjsLib = window['pdfjs-dist/build/pdf'];
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
+    </script>
+
+    <script type="text/javascript" src="PdfRenderer.js"></script>
+
+    <script>
+        const pdf = new PdfRenderer('file:///Users/didas/Development/JavaScript/pdf-diff//p029-Shetty.pdf');
+
+        pdf.render('pdf-0').then(
+        (renderedPdf) => { 
+            renderedPdfs[index] = renderedPdf;
+            renderPdfDiff();
+        },
+        () => console.log('error')
+        );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    font-family: 'Courier New', Courier, monospace;
+ }
+
+header {
+    background-color: #60606e;
+    padding: 5px;
+    margin-bottom: 20px;
+    color: #eee;
+    box-shadow: 0px 5px 10px #222;
+}
+
+h1 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+section {
+    display: inline-block;
+    width: calc(33.3% - 15px);
+    vertical-align: top;
+    text-align: center;
+}
+
+section:nth-of-type(2) {
+    margin-left: 45px;
+}
+
+canvas, .diff-msg {
+    margin: 4px;
+    width: calc(100% - 8px);
+    border: 1px solid #aaa;
+    display: inline-block;
+}
+
+.upload-area {
+    position: relative;
+    height: 40px;
+}
+
+.upload-area > input {
+    position:absolute;
+}
+
+#file-input-0 {
+    top: 0;
+    left: 10%;
+}
+
+#file-input-1 {
+    top: 0;
+    right: 10%;
+}
+
+.canvas-wrapper {
+    position: relative;
+}
+
+.check {
+    position: absolute;
+    display: inline-block;
+    transform: rotate(45deg);
+    height: 40px;
+    width: 20px;
+    top: calc(50% - 30px);
+    left: calc(50% - 10px);
+    border-bottom: 10px solid green;
+    border-right: 10px solid green;
+    z-index: 100;
+}
+
+.diff-mark {
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 10px);
+    width: 30px;
+    height: 30px;
+}
+
+.diff-mark:before, .diff-mark:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 60px;
+    width: 15px;
+    background-color: red;
+}
+.diff-mark:before {
+    transform: rotate(45deg);
+}
+.diff-mark:after {
+    transform: rotate(-45deg);
+}
+
+.-hidden {
+    display: none;
+}
+
+#loader {
+    border: 20px solid transparent;
+    border-top: 20px solid #555;
+    border-bottom: 20px solid #555;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 40vh;
+    left: calc(50vw - 60px);
+    z-index: 100;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#diff-info {
+    position: relative;
+    text-align: center;
+    height: 100px;
+}
+
+.page-number {
+    position: absolute;
+    top: 20px;
+    left: -25px;
+    width: 30px;
+    height: 30px;
+    font-family: monospace;
+    background-color: #555;
+    line-height: 30px;
+    color: white;
+}
+
+.intro-text {
+    margin-top: 100px;
+    font-family: sans-serif;
+}
