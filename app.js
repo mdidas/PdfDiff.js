@@ -98,6 +98,8 @@ const render = function(fileReader, index) {
           loader.className = '-hidden';
         });
       }
+        document.getElementById('file-input-0').value = '';
+        document.getElementById('file-input-1').value = '';
     },
     () => console.log('error')
   );
